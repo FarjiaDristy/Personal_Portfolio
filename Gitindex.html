@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farjia Dristy | AI & Data Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Configure Tailwind with custom colors and font for subtle, light aesthetic -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-light': '#F5F5DC', // Light Beige/Cream Background
+                        'secondary-light': '#FFFFFF', // White/Card Background
+                        'text-dark': '#333333', // Dark Text on Light Background
+                        'text-muted': '#6B7280', // Muted Gray Text
+                        'accent-pink': '#F472B6', // Soft Pink Accent (Rose-400)
+                        'accent-green': '#6EE7B7', // Soft Light Green/Sky Blue Accent (Emerald-300)
+                        'accent-purple-light': '#C4B5FD', // Light Lavender/Violet for Tool Tags (Violet-300)
+                        'accent-indigo-deep': '#4338CA', // Deep Indigo for professional shadows (Indigo-700)
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                    animation: {
+                        'slide-in': 'slide-in 0.6s ease-out',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Global styles for smooth scrolling and clean body */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Switched to light theme colors */
+        body {
+            background-color: #F5F5DC; /* primary-light (Cream/Beige) */
+            color: #333333; /* text-dark */
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar for aesthetics (Soft Pink) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FFFFFF; /* secondary-light */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #F472B6; /* accent-pink */
+            border-radius: 4px;
+        }
+
+        /* Styling for glass/blur cards (Subtle Creamy White) */
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.85); /* Slightly less transparent */
+            backdrop-filter: blur(10px); /* Increased blur for professional look */
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(244, 114, 182, 0.2); /* faint pink border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Subtle Futuristic hover effect (Deep Indigo/Professional Shadow) */
+        .glass-card:hover {
+            transform: translateY(-7px); /* Increased lift for impact */
+            /* Using a deep indigo shadow for a more professional, grounded hover effect */
+            box-shadow: 0 15px 35px rgba(67, 56, 202, 0.25); 
+            border-color: #A78BFA; /* Light Violet border on hover */
+            filter: none;
+        }
+
+        /* 3D Parallax background effect (Soft Pink dots) */
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .parallax-bg .dot {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #F472B6; /* accent-pink */
+            opacity: 0.5; /* More subtle */
+            transition: transform 0.1s ease-out;
+        }
+        
+        /* Smooth scroll targets for better anchor jumps */
+        section {
+            padding-top: 5rem;
+            margin-top: -5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card p-4 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold text-accent-pink hover:text-accent-green transition duration-300">Farjia A. Dristy</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-text-dark hover:text-accent-pink transition duration-300">About</a>
+                <a href="#skills" class="text-text-dark hover:text-accent-pink transition duration-300">Skills</a>
+                <a href="#projects" class="text-text-dark hover:text-accent-pink transition duration-300">Projects</a>
+                <a href="#contact" class="text-text-dark hover:text-accent-pink transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Toggle (optional - for brevity using hidden/flex) -->
+        </div>
+    </nav>
+
+    <main class="relative">
+
+        <!-- 1. Hero Section - Intellectual & Subtle -->
+        <section id="hero" class="relative overflow-hidden pt-32 pb-24 min-h-screen flex items-center justify-center text-center">
+            <!-- Parallax Background Container -->
+            <div class="parallax-bg" id="parallax-container">
+                <!-- Dots generated by JS for a subtle 3D effect -->
+            </div>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-4 animate-slide-in">
+                <!-- Headline is more intellectual, gradient emphasizes soft pink/green -->
+                <h1 class="text-6xl md:text-8xl font-extrabold mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-accent-pink to-accent-green">
+                    Synthesizing Intelligence & Data Dynamics
+                </h1>
+                <!-- Description is humble and sophisticated -->
+                <p class="text-2xl text-text-dark mb-8 font-light">
+                    Focused on the iterative exploration of <span class="text-accent-pink font-semibold">Generative AI</span> and <span class="text-accent-green font-semibold">MLOps infrastructure,</span> translating complex data into elegant, actionable solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <!-- Primary button is now ACCENT GREEN (More Professional/Tech Focus) -->
+                    <a href="#projects" class="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-lg shadow-xl text-white bg-accent-green hover:bg-accent-pink transform hover:scale-105 transition duration-300">
+                        Explore Concepts <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                    <!-- Secondary button is now ACCENT PINK -->
+                    <a href="mailto:farjiadristy@gmail.com" class="inline-flex items-center px-8 py-3 text-lg font-medium rounded-lg text-accent-pink border border-accent-pink hover:bg-secondary-light transform hover:scale-105 transition duration-300">
+                        Initiate Dialogue <i data-lucide="mail" class="ml-2 w-5 h-5"></i>
+                    </a>
+                </div>
+                <p class="text-sm mt-8 text-text-muted italic">
+                    "I always look angry even though I am not." 😉
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="py-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent-pink">About My Trajectory</h2>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="glass-card p-8 rounded-xl animate-slide-in">
+                        <!-- Heading is more intellectual -->
+                        <h3 class="text-2xl font-semibold mb-4 text-accent-pink">Iterative Pursuit of Mastery</h3>
+                        <!-- Paragraph is humble intellectual -->
+                        <p class="text-text-muted leading-relaxed">
+                            My philosophy centers on continuous, iterative learning—a necessary humility in the rapid evolution of technology. I seek to contribute my emerging expertise in <span class="font-semibold text-text-dark">data analysis, programming, and Gen AI</span> to challenges that demand rigorous problem-solving, always prioritizing clean execution and collaborative synergy.
+                        </p>
+                        <ul class="mt-6 space-y-3 text-text-dark">
+                            <li class="flex items-center"><i data-lucide="code" class="w-5 h-5 mr-3 text-accent-pink"></i> Currently synthesizing intelligence for a cute and friendly AI Fitness agent.</li>
+                            <li class="flex items-center"><i data-lucide="layers-3" class="w-5 h-5 mr-3 text-accent-pink"></i> Deeply exploring the intersection of Cybersecurity and advanced Data Analysis methodologies.</li>
+                            <li class="flex items-center"><i data-lucide="book-open-text" class="w-5 h-5 mr-3 text-accent-pink"></i> Engaged in the study of ML MLOPS and the robust framework of Python Django.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Experience Card 1 -->
+                        <div class="glass-card p-6 rounded-xl transition duration-300 ease-in-out hover:shadow-2xl hover:border-accent-pink">
+                            <p class="text-sm text-accent-green mb-1">DEC 2023 - JAN 2024</p>
+                            <h4 class="text-xl font-semibold text-text-dark">Data Analyst Consultant</h4>
+                            <p class="text-text-muted">Hashmap Remote</p>
+                        </div>
+                        <!-- Experience Card 2 -->
+                        <div class="glass-card p-6 rounded-xl transition duration-300 ease-in-out hover:shadow-2xl hover:border-accent-pink">
+                            <p class="text-sm text-accent-green mb-1">AUG 2023 - DEC 2023</p>
+                            <h4 class="text-xl font-semibold text-text-dark">Remote Virtual Chat Support Consultant</h4>
+                            <p class="text-text-muted">Systech International</p>
+                        </div>
+                        <!-- Education Card -->
+                        <div class="glass-card p-6 rounded-xl transition duration-300 ease-in-out hover:shadow-2xl hover:border-accent-pink">
+                            <h4 class="text-xl font-semibold text-text-dark mb-1">B.Sc. in Computer Science Engineering</h4>
+                            <p class="text-text-muted">Primeasia University (2020-2024)</p>
+                            <p class="text-sm text-accent-pink">CGPA: 3.81 (A testament to foundational rigor)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent-green">Core Competencies</h2>
+
+                <!-- Main Skills Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- AI & Development -->
+                    <div class="glass-card p-6 rounded-xl animate-slide-in" style="animation-delay: 0.1s;">
+                        <div class="flex items-center mb-4 text-accent-pink">
+                            <i data-lucide="brain" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-2xl font-semibold">AI & Development</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Gen AI</span>
+                            <span class="skill-tag">LLM Architecture</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">MERN Stack</span>
+                            <span class="skill-tag">Node Js/JavaScript</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">.NET (React Js)</span>
+                            <span class="skill-tag">C++/C</span>
+                        </div>
+                    </div>
+
+                    <!-- Data & Analytics -->
+                    <div class="glass-card p-6 rounded-xl animate-slide-in" style="animation-delay: 0.2s;">
+                        <div class="flex items-center mb-4 text-accent-pink">
+                            <i data-lucide="database" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-2xl font-semibold">Data & Analytics</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Data Science</span>
+                            <span class="skill-tag">Data Engineer</span>
+                            <span class="skill-tag">SQL Structuring</span>
+                            <span class="skill-tag">External API Integration</span>
+                            <span class="skill-tag">IoT Data Processing</span>
+                            <span class="skill-tag">SPSS, Strata</span>
+                        </div>
+                    </div>
+
+                    <!-- Project & Content -->
+                    <div class="glass-card p-6 rounded-xl animate-slide-in" style="animation-delay: 0.3s;">
+                        <div class="flex items-center mb-4 text-accent-pink">
+                            <i data-lucide="file-text" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-2xl font-semibold">Agile & Content Strategy</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Agile Project Management</span>
+                            <span class="skill-tag">SCRUM Master</span>
+                            <span class="skill-tag">Sprint Planning</span>
+                            <span class="skill-tag">SEO Strategy</span>
+                            <span class="skill-tag">Content Writing</span>
+                            <span class="skill-tag">Keyword Research</span>
+                            <span class="skill-tag">WordPress Deployment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Interests (Tags updated for tabular 3D look and pill/elliptical shape) -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-center mb-6 text-text-dark">Expert Tools & Domains of Interest</h3>
+                    <!-- Changed from flex-wrap to a responsive grid for tabular alignment -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                        <!-- Item 1: Cybersecurity Foundations -->
+                        <span class="tool-tag">
+                            <i data-lucide="shield" class="w-5 h-5 mr-3 text-accent-pink"></i>
+                            Cybersecurity Foundations
+                        </span>
+                        <!-- Item 2: OSINT Methodologies -->
+                        <span class="tool-tag">
+                            <i data-lucide="eye" class="w-5 h-5 mr-3 text-accent-pink"></i>
+                            OSINT Methodologies
+                        </span>
+                        <!-- Item 3: Gemini / GPT Frameworks -->
+                        <span class="tool-tag">
+                            <i data-lucide="gem" class="w-5 h-5 mr-3 text-accent-pink"></i>
+                            Gemini / GPT Frameworks
+                        </span>
+                        <!-- Item 4: Jira, Slack, Asana (Agile Tools) -->
+                        <span class="tool-tag">
+                            <i data-lucide="gantt-chart-square" class="w-5 h-5 mr-3 text-accent-pink"></i>
+                            Jira, Slack, Asana (Agile Tools)
+                        </span>
+                        <!-- Item 5: Google Analytics/Console -->
+                        <span class="tool-tag">
+                            <i data-lucide="line-chart" class="w-5 h-5 mr-3 text-accent-pink"></i>
+                            Google Analytics/Console
+                        </span>
+                         <!-- Item 6: SQL Structuring -->
+                         <span class="tool-tag">
+                            <i data-lucide="cpu" class="w-5 h-5 mr-3 text-accent-pink"></i>
+                            SPSS & Strata Analysis
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Projects Section (Mockup) -->
+        <section id="projects" class="py-20 bg-primary-light">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16 text-accent-pink">Featured Projects: Synthesis in Practice</h2>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Project 1 -->
+                    <div class="glass-card p-8 rounded-xl animate-slide-in hover:border-accent-pink">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-accent-green">AI Fitness Agent (In Development)</h3>
+                            <i data-lucide="smile-plus" class="w-8 h-8 text-accent-pink"></i>
+                        </div>
+                        <p class="text-text-muted mb-4">
+                            Conceptualizing and developing a friendly, conversational AI agent focused on personalized fitness routines and nutritional guidance via advanced Gen AI dialogue systems.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">LLM</span>
+                            <span class="project-tag">MLOps</span>
+                            <span class="project-tag">Django</span>
+                        </div>
+                        <a href="#" class="text-accent-pink font-semibold hover:text-accent-green transition duration-300">
+                            Review Methodology &rarr;
+                        </a>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass-card p-8 rounded-xl animate-slide-in hover:border-accent-pink" style="animation-delay: 0.2s;">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-accent-green">Scalable Data Pipeline Automation</h3>
+                            <i data-lucide="pipeline" class="w-8 h-8 text-accent-pink"></i>
+                        </div>
+                        <p class="text-text-muted mb-4">
+                            Engineered and optimized robust data pipelines for reliable ingestion and processing of distributed IoT data and multiple external APIs, focusing on availability and analytics readiness.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="project-tag">Data Engineer</span>
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">IoT Data</span>
+                        </div>
+                        <a href="#" class="text-accent-pink font-semibold hover:text-accent-green transition duration-300">
+                            View on GitHub &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Contact Section -->
+        <section id="contact" class="py-20 pb-32">
+            <div class="max-w-xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-4 text-accent-pink">Initiate Dialogue: Let's Build Together</h2>
+                <p class="text-xl text-text-muted mb-10">
+                    I welcome collaborative opportunities in AI Development and strategic web applications. I'm available to discuss Gen AI, LLM architectures, and OSINT methodologies.
+                </p>
+
+                <div class="glass-card p-8 rounded-xl animate-slide-in">
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg bg-secondary-light border border-text-muted/30 focus:border-accent-pink focus:ring focus:ring-accent-pink/50 outline-none text-text-dark" required>
+                        <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-secondary-light border border-text-muted/30 focus:border-accent-pink focus:ring focus:ring-accent-pink/50 outline-none text-text-dark" required>
+                        <textarea placeholder="Your Message or Collaboration Idea" rows="4" class="w-full p-3 rounded-lg bg-secondary-light border border-text-muted/30 focus:border-accent-pink focus:ring focus:ring-accent-pink/50 outline-none text-text-dark" required></textarea>
+                        <!-- Button is now ACCENT GREEN (Primary action) -->
+                        <button type="submit" class="w-full py-3 text-lg font-medium rounded-lg text-white bg-accent-green hover:bg-accent-pink transform hover:scale-[1.02] transition duration-300">
+                            Transmit Message
+                        </button>
+                    </form>
+                    <p class="text-sm mt-4 text-text-muted">
+                        Direct inquiries can be sent to: <a href="mailto:farjiadristy@gmail.com" class="text-accent-pink hover:underline">farjiadristy@gmail.com</a>
+                    </p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-6 mt-10">
+                    <a href="#" target="_blank" class="text-text-dark hover:text-accent-pink transition duration-300 transform hover:scale-110">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-text-dark hover:text-accent-pink transition duration-300 transform hover:scale-110">
+                        <i data-lucide="github" class="w-8 h-8"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-text-dark hover:text-accent-pink transition duration-300 transform hover:scale-110">
+                        <i data-lucide="twitter" class="w-8 h-8"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-light p-6 text-center text-text-muted border-t border-text-muted/20">
+        <p>&copy; 2025 Farjia Ahamed Dristy. Crafted with <i data-lucide="heart" class="inline w-4 h-4 text-accent-pink"></i> and the precision of code.</p>
+    </footer>
+
+    <!-- CSS Classes for Tags - Updated for light theme and subtle colors -->
+    <style>
+        .skill-tag {
+            @apply px-3 py-1 text-sm font-medium rounded-full bg-accent-pink/30 text-text-dark hover:bg-accent-pink/40 transition duration-200 cursor-default;
+        }
+        
+        /* UPDATED: Aesthetic, defined ELLIPTICAL (Pill) shape for tool-tags */
+        .tool-tag {
+            /* Changed to rounded-full for elliptical shape, and adjusted padding */
+            @apply flex items-center justify-start py-2 px-6 text-base font-semibold rounded-full transition duration-300 ease-in-out cursor-default text-text-dark;
+            
+            /* Clean Glass Background */
+            background-color: rgba(255, 255, 255, 0.95); /* Nearly solid white background */
+            backdrop-filter: blur(8px); 
+            -webkit-backdrop-filter: blur(8px);
+            
+            /* Defined Border using the technical ACCENT GREEN */
+            border: 2px solid rgba(110, 231, 183, 0.6); /* Thicker, green-tinted border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft, subtle initial shadow */
+        }
+
+        /* Enhanced hover for 3D effect (Professional Deep Indigo Glow) */
+        .tool-tag:hover {
+            transform: translateY(-5px); 
+            /* Deep indigo shadow for a professional lift */
+            box-shadow: 0 8px 20px rgba(67, 56, 202, 0.3); 
+            /* Hover border color changes to the stronger pink for emphasis */
+            border-color: #F472B6; 
+        }
+
+        .project-tag {
+            /* Changed to blend softly with the light card background */
+            @apply px-3 py-1 text-xs font-medium rounded-full bg-primary-light text-text-dark border border-text-muted/50;
+        }
+    </style>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            // 1. Smooth Scroll for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // 2. 3D Parallax Effect on Hero Section
+            const parallaxContainer = document.getElementById('parallax-container');
+            const numDots = 50;
+            const dots = [];
+
+            // Create dot elements
+            for (let i = 0; i < numDots; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                dot.style.left = `${Math.random() * 100}vw`;
+                dot.style.top = `${Math.random() * 100}vh`;
+                dot.dataset.depth = Math.random() * (1 - 0.2) + 0.2; // Depth factor between 0.2 and 1.0
+                dot.style.opacity = dot.dataset.depth * 0.5; // Adjusted opacity for subtlety
+                dot.style.width = dot.style.height = `${dot.dataset.depth * 4 + 1}px`; // Vary size based on depth
+                parallaxContainer.appendChild(dot);
+                dots.push(dot);
+            }
+
+            // Mouse move listener for parallax
+            window.addEventListener('mousemove', (e) => {
+                const x = e.clientX / window.innerWidth - 0.5; // Normalized x (-0.5 to 0.5)
+                const y = e.clientY / window.innerHeight - 0.5; // Normalized y (-0.5 to 0.5)
+
+                dots.forEach(dot => {
+                    const depth = parseFloat(dot.dataset.depth);
+                    const moveX = -x * 50 * depth; // Adjust multiplier for movement intensity
+                    const moveY = -y * 50 * depth;
+
+                    dot.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
+            });
+
+            // 3. Simple Scroll Reveal (Intersection Observer)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelectorAll('.animate-slide-in').forEach(element => {
+                            element.style.opacity = '1';
+                            element.style.transform = 'translateY(0)';
+                            element.classList.add('animate-slide-in');
+                        });
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                // Pre-set initial state for the animation targets
+                section.querySelectorAll('.animate-slide-in').forEach(element => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(20px)';
+                });
+                observer.observe(section);
+            });
+        });
+
+        // 4. Form Submission Placeholder
+        document.querySelector('#contact form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real app, this would use fetch() to send data
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            submitButton.textContent = 'Transmission Successful!';
+            submitButton.classList.remove('bg-accent-green');
+            submitButton.classList.add('bg-accent-pink', 'text-white');
+            setTimeout(() => {
+                submitButton.textContent = 'Transmit Message';
+                submitButton.classList.remove('bg-accent-pink');
+                submitButton.classList.add('bg-accent-green');
+                e.target.reset();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
