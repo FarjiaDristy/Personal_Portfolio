@@ -112,6 +112,43 @@
             padding-top: 5rem;
             margin-top: -5rem;
         }
+
+        .skill-tag {
+            @apply px-3 py-1 text-sm font-medium rounded-full bg-accent-pink/30 text-text-dark hover:bg-accent-pink/40 transition duration-200 cursor-default;
+        }
+        
+        /* UPDATED: Aesthetic, defined ELLIPTICAL (Pill) shape for tool-tags */
+        .tool-tag {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 9999px; /* <-- This makes it fully rounded */
+            transition: all 0.3s cubic-bezier(.4,0,.2,1);
+            cursor: default;
+            color: #333333;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 2px solid rgba(110, 231, 183, 0.6);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Enhanced hover for 3D effect (Professional Deep Indigo Glow) */
+        .tool-tag:hover {
+            transform: translateY(-5px); 
+            /* Deep indigo shadow for a professional lift */
+            box-shadow: 0 8px 20px rgba(67, 56, 202, 0.3); 
+            /* Hover border color changes to the stronger pink for emphasis */
+            border-color: #F472B6; 
+        }
+
+        .project-tag {
+            /* Changed to blend softly with the light card background */
+            @apply px-3 py-1 text-xs font-medium rounded-full bg-primary-light text-text-dark border border-text-muted/50;
+        }
     </style>
 </head>
 <body>
@@ -410,17 +447,21 @@
         
         /* UPDATED: Aesthetic, defined ELLIPTICAL (Pill) shape for tool-tags */
         .tool-tag {
-            /* Changed to rounded-full for elliptical shape, and adjusted padding */
-            @apply flex items-center justify-start py-2 px-6 text-base font-semibold rounded-full transition duration-300 ease-in-out cursor-default text-text-dark;
-            
-            /* Clean Glass Background */
-            background-color: rgba(255, 255, 255, 0.95); /* Nearly solid white background */
-            backdrop-filter: blur(8px); 
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 9999px; /* <-- This makes it fully rounded */
+            transition: all 0.3s cubic-bezier(.4,0,.2,1);
+            cursor: default;
+            color: #333333;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            
-            /* Defined Border using the technical ACCENT GREEN */
-            border: 2px solid rgba(110, 231, 183, 0.6); /* Thicker, green-tinted border */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft, subtle initial shadow */
+            border: 2px solid rgba(110, 231, 183, 0.6);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         /* Enhanced hover for 3D effect (Professional Deep Indigo Glow) */
@@ -535,4 +576,3 @@
     </script>
 </body>
 </html>
-
